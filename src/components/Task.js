@@ -1,3 +1,7 @@
+// npm i react-icons
+// "FaTimes" is the Font Awesome "X" symbol
+// Don't forget to put "/fa" at the end of the import for Font Awesome
+
 import { FaTimes } from 'react-icons/fa'
 
 const Task = ({ task }) => {
