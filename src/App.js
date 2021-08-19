@@ -3,6 +3,7 @@ import Tasks from './components/Tasks'
 import { useState } from 'react'
 
 const App = () => {
+  //State gets passed down while action get passed up
   const [tasks, setTasks] = useState([
     {
       id: 1,
@@ -23,10 +24,16 @@ const App = () => {
       reminder: false,
     },
   ])
+
+  // Delete Task
+  const deleteTask = (e) => {
+    console.log('delete', e)
+  }
+
   return (
     <div className='container'>
       <Header />
-      <Tasks tasks={tasks} />
+      <Tasks tasks={tasks} onDelete={deleteTask} />
     </div>
   )
 }
