@@ -1,6 +1,6 @@
-import Header from './components/Header'
-import Tasks from './components/Tasks'
-import { useState } from 'react'
+import Header from './components/Header';
+import Tasks from './components/Tasks';
+import { useState } from 'react';
 
 const App = () => {
   //State gets passed down while action get passed up
@@ -23,19 +23,27 @@ const App = () => {
       day: 'Feb 5th at 2:30pm',
       reminder: false,
     },
-  ])
+  ]);
 
   // Delete Task
-  const deleteTask = (e) => {
-    console.log('delete', e)
-  }
+  const deleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+  //Toggle Reminder
+  const toggleReminder = (id) => {
+    console.log(id);
+  };
 
   return (
-    <div className='container'>
+    <div className="container">
       <Header />
-      <Tasks tasks={tasks} onDelete={deleteTask} />
+      {tasks.length > 0 ? (
+        <Tasks tasks={tasks} onToggle={toggleReminder} onDelete={deleteTask} />
+      ) : (
+        'No Tasks To Show'
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
