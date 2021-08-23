@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
-const AddTask = ({ onAdd }) => {
+const AddTask = ({ onSubmit }) => {
   const [text, setText] = useState('');
   const [day, setDay] = useState('');
   const [reminder, setReminder] = useState(false);
 
-  handleOnSubmit = (e) => {
+  const handleOnSubmit = (e) => {
     e.preventDefault();
   };
   return (

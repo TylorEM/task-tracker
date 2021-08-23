@@ -45,7 +45,7 @@ const App = () => {
   return (
     <div className="container">
       <Header />
-      <AddTask onAdd={addTask} />
+      <AddTask onSubmit={addTask} />
       {tasks.length > 0 ? (
         <Tasks tasks={tasks} onToggle={toggleReminder} onDelete={deleteTask} />
       ) : (
