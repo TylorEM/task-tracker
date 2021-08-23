@@ -6,7 +6,11 @@ import { FaTimes } from 'react-icons/fa';
 
 const Task = ({ task, onDelete, onToggle }) => {
   return (
-    <div onDoubleClick={onToggle} className="task">
+    <div
+      onDoubleClick={() => onToggle(task.id)}
+      // adding the task class as well as the reminder class if task.reminder is equal to true. Otherwise the only tag on the div is task.
+      className={`task ${task.reminder ? 'reminder' : ''}`}
+    >
       <h3>
         {task.text}
         <FaTimes
